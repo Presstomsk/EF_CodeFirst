@@ -17,7 +17,7 @@ namespace EF.Lib
         }
         public static DateBase Init()
         {
-            var options = new DbContextOptionsBuilder<DateBase>().UseMySQL(unt).Options;
+            var options = new DbContextOptionsBuilder<DateBase>().UseMySQL(GetConnectionString()).Options;
             return new DateBase(options);
         }
 
