@@ -17,11 +17,11 @@ namespace EF.Lib
         }
         public static DataBase Init()
         {
-            var options = new DbContextOptionsBuilder<DataBase>().UseMySQL(GetConnectionString()).Options;
+            var options = new DbContextOptionsBuilder<DataBase>().UseMySQL(GetConnectionString(connectionStringFile)).Options;
             return new DataBase(options);
         }
 
-        protected static string GetConnectionString()
+        public static string GetConnectionString(string connectionStringFile)
         {
             var streamReader = new StreamReader(Directory.GetCurrentDirectory() + connectionStringFile);
             return streamReader.ReadToEnd();
