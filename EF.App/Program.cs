@@ -9,7 +9,7 @@ namespace EF.App
     {
         static void Main()
         {
-            using (var db = DateBase.Init())
+            using (var db = DataBase.Init())
             {
                 // создаем два объекта Game
 
@@ -34,7 +34,7 @@ namespace EF.App
                 db.TabGames.Add(warCraft);
                 db.SaveChanges();
             }
-            using (var db = DateBase.Init())
+            using (var db = DataBase.Init())
             {
                 // Получаем объекты из базы данных и выводим на консоль
 

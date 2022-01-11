@@ -5,20 +5,20 @@ using System.IO;
 
 namespace EF.Lib
 {
-    public class DateBase : DbContext
+    public class DataBase : DbContext
     {
         public static string connectionStringFile = "/ConnectionString.txt";
         public DbSet<Game> TabGames { get; set; }
 
-        protected DateBase() { }
-        public DateBase(DbContextOptions<DateBase> options) : base(options)
+        protected DataBase() { }
+        public DataBase(DbContextOptions<DataBase> options) : base(options)
         {
             Database.EnsureCreated();
         }
-        public static DateBase Init()
+        public static DataBase Init()
         {
-            var options = new DbContextOptionsBuilder<DateBase>().UseMySQL(GetConnectionString()).Options;
-            return new DateBase(options);
+            var options = new DbContextOptionsBuilder<DataBase>().UseMySQL(GetConnectionString()).Options;
+            return new DataBase(options);
         }
 
         protected static string GetConnectionString()
