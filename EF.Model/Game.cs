@@ -1,5 +1,4 @@
-﻿using System;
-
+﻿
 namespace EF.Model
 {
     public class Game
