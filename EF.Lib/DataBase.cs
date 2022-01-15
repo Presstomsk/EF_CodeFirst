@@ -7,7 +7,7 @@ namespace EF.Lib
 {
     public class DataBase : DbContext
     {
-        public static string connectionStringFile = "/ConnectionString.txt";
+        public static string connectionStringFile => "/ConnectionString.txt";
         public DbSet<Game> TabGames { get; set; }
 
         protected DataBase() { }
